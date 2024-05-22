@@ -6,15 +6,19 @@
 //
 
 import SwiftUI
-
+import FirebaseCore
 @main
 struct MovieAppApp: App {
     let persistenceController = PersistenceController.shared
-
-    var body: some Scene {
-        WindowGroup {
-            ContentView()
-                .environment(\.managedObjectContext, persistenceController.container.viewContext)
+   
+    init() {
+        FirebaseApp.configure()
+    }
+        var body: some Scene {
+            WindowGroup {
+                ContentView()
+                    .environment(\.managedObjectContext, persistenceController.container.viewContext)
+            }
         }
     }
-}
+

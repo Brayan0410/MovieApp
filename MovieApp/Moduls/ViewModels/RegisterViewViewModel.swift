@@ -4,9 +4,8 @@
 //
 //  Created by Luis Gutierrez on 22/05/24.
 //
-
-//import FirebaseFirestore
-//import FirebaseAuth
+import FirebaseFirestore
+import FirebaseAuth
 import Foundation
 class RegisterViewViewModel: ObservableObject {
     @Published var name = ""
@@ -20,21 +19,21 @@ class RegisterViewViewModel: ObservableObject {
             return
         }
         
-//        Auth.auth().createUser(withEmail: email, password: password) {[weak self] result, error in guard let userId = result?.user.uid else {
-//            return
-//           }
-//            self?.insertUserRecord(id: userId)
-//        }
-//    }
-//    private func insertUserRecord(id: String) {
-//        let newUser = User(id: id, name: name,
-//                           email: email,
-//                           joined: Date().timeIntervalSince1970)
-//        
-//     //   let db = Firestore.firestore()
-//        db.collection("users")
-//        .document(id)
-//        .setData(newUser.asDictionary())
+        Auth.auth().createUser(withEmail: email, password: password) {[weak self] result, error in guard let userId = result?.user.uid else {
+            return
+           }
+            self?.insertUserRecord(id: userId)
+        }
+    }
+    private func insertUserRecord(id: String) {
+        let newUser = User(id: id, name: name,
+                           email: email,
+                           joined: Date().timeIntervalSince1970)
+        
+        let db = Firestore.firestore()
+        db.collection("users")
+        .document(id)
+        .setData(newUser.asDictionary())
         
     }
     
@@ -48,8 +47,9 @@ class RegisterViewViewModel: ObservableObject {
         return false
     }
     guard password.count >= 6 else {
-        return false //password
+        return false
     }
     return true
     }
 }
+
