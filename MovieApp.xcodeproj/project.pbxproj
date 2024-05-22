@@ -16,6 +16,7 @@
 		9D0814F82BFDA51E0031CC80 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D0814F72BFDA51E0031CC80 /* APIClient.swift */; };
 		9D0814FC2BFDA5410031CC80 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D0814FB2BFDA5410031CC80 /* LoginView.swift */; };
 		9D0814FE2BFDA55A0031CC80 /* LoginViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D0814FD2BFDA55A0031CC80 /* LoginViewViewModel.swift */; };
+		9D3B713D2BFDB19E00DFB039 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D3B713C2BFDB19E00DFB039 /* RegisterView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,7 @@
 		9D0814F72BFDA51E0031CC80 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		9D0814FB2BFDA5410031CC80 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		9D0814FD2BFDA55A0031CC80 /* LoginViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewViewModel.swift; sourceTree = "<group>"; };
+		9D3B713C2BFDB19E00DFB039 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +88,7 @@
 			isa = PBXGroup;
 			children = (
 				9D0814FB2BFDA5410031CC80 /* LoginView.swift */,
+				9D3B713C2BFDB19E00DFB039 /* RegisterView.swift */,
 			);
 			path = Moduls;
 			sourceTree = "<group>";
@@ -181,6 +184,7 @@
 				9D0814EA2BFDA4C00031CC80 /* Persistence.swift in Sources */,
 				9D0814E32BFDA4BE0031CC80 /* ContentView.swift in Sources */,
 				9D0814ED2BFDA4C00031CC80 /* MovieApp.xcdatamodeld in Sources */,
+				9D3B713D2BFDB19E00DFB039 /* RegisterView.swift in Sources */,
 				9D0814F82BFDA51E0031CC80 /* APIClient.swift in Sources */,
 				9D0814E12BFDA4BE0031CC80 /* MovieAppApp.swift in Sources */,
 			);
