@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct RegisterView: View {
-    @StateObject var viewModel = RegisterViewViewModel()
+    @StateObject var viewModel = LoginViewViewModel()
     
     var body: some View {
         NavigationView {

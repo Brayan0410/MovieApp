@@ -32,7 +32,7 @@ struct LoginView: View {
                     }
                     .padding(.bottom, 10)
                     
-                    Spacer()
+                    Spacer() 
                     
                     VStack(spacing: 18) {
                         if !viewModel.errorMessage.isEmpty {
@@ -54,6 +54,7 @@ struct LoginView: View {
                             .textFieldStyle(PlainTextFieldStyle())
                         
                         Button(action: {
+                            
                             viewModel.login()
                         }) {
                             Text("Log In")
@@ -63,14 +64,10 @@ struct LoginView: View {
                                 .background(Color.blue.opacity(0.2))
                                 .cornerRadius(10)
                         }
-                        
-                        // Add NavigationLink for forgotten password
-                        NavigationLink("Forgotten your password?", destination: ForgotView())
-                            .foregroundColor(.white)
-                            .padding(.top, 10)
                     }
                     .padding()
                     
+                   
                     VStack {
                         Text("New around here?")
                             .foregroundColor(.white)
