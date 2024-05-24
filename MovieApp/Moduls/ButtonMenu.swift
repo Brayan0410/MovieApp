@@ -8,26 +8,22 @@
 import SwiftUI
 
 struct ButtonMenu: View {
+        
+    
     var body: some View {
-       
-            Button(action: {
-                //Acción para acceder al perfil de usuario
-               
-            }) {
-                Image(systemName: "text.alignright")
-                    .font(.system(size: 20))
-                    .foregroundStyle(.pink)
-                    .padding(.top)
-                    .offset(CGSize(width: -20, height: 20))
-            }
         
         
-        
+        NavigationLink(destination: ProfileView()) {
+            Image(systemName: "person.crop.circle")
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .frame(width: 30, height: 30)
+                .foregroundColor(.white)
         }
-        
     }
-
-
-#Preview {
-    Button1()
 }
+
+
+//#Preview {
+//    ButtonMenu(showProfile: .constant(false))
+//}
