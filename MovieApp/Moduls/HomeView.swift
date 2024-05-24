@@ -67,9 +67,9 @@ struct HomeView: View {
 //                            .padding(.trailing, 200)
                         ScrollView(.horizontal, showsIndicators: true) {
                             HStack {
-                                ForEach (viewModelHV.upcomingMovies ?? [] , id: \.id) { movieResult in
+                                ForEach (viewModelHV.romanceMovies ?? [] , id: \.id) { movieResult3 in
                                     
-                                    MovieCardView(movie: movieResult)
+                                    MovieCardView(movie: movieResult3)
                                 }
                             }
                             .padding(.horizontal, 20)
@@ -89,6 +89,7 @@ struct HomeView: View {
         .onAppear {
             viewModelHV.getUpcomingMovies()
             viewModelHV.getFamilyMovies()
+            viewModelHV.getRomanceMovies()
         }
     }
 }
