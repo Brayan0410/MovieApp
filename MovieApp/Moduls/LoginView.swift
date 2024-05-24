@@ -20,10 +20,16 @@ struct LoginView: View {
                 
                 VStack {
                     VStack(spacing: 10) {
-                        Text("MovieApp")
-                            .font(.system(size: 60, weight: .bold))
-                            .foregroundColor(.white)
-                            .bold()
+                        HStack {
+                            Image(systemName: "movieclapper")
+                                .font(.system(size: 40))
+                                .foregroundColor(.white)
+                            
+                            Text("MovieApp")
+                                .font(.system(size: 60, weight: .bold))
+                                .foregroundColor(.white)
+                                .bold()
+                        }
                         
                         Text("Watch a movie and relax")
                             .font(.system(size: 20, weight: .bold))
@@ -32,7 +38,7 @@ struct LoginView: View {
                     }
                     .padding(.bottom, 10)
                     
-                    Spacer() 
+                    Spacer()
                     
                     VStack(spacing: 18) {
                         if !viewModel.errorMessage.isEmpty {
@@ -54,7 +60,6 @@ struct LoginView: View {
                             .textFieldStyle(PlainTextFieldStyle())
                         
                         Button(action: {
-                            
                             viewModel.login()
                         }) {
                             Text("Log In")
@@ -64,15 +69,17 @@ struct LoginView: View {
                                 .background(Color.blue.opacity(0.2))
                                 .cornerRadius(10)
                         }
+                        NavigationLink("Forgotten your password?", destination: ForgotPasswordView(viewModel: viewModel))
+                            .foregroundColor(.white)
+                            .padding(.top, 10)
                     }
                     .padding()
                     
-                   
                     VStack {
                         Text("New around here?")
                             .foregroundColor(.white)
                         
-                        NavigationLink("Create An Account", destination: RegisterView())
+                        NavigationLink("Create An Account", destination: RegisterView(viewModel: viewModel))
                     }
                     .padding(.bottom, 100)
                     

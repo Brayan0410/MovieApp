@@ -45,9 +45,9 @@ class LoginViewViewModel: ObservableObject {
         let newUser = User(id: id, name: name, email: email, joined: Date().timeIntervalSince1970)
         
         let db = Firestore.firestore()
-        db.collection("users").document(id).setData(newUser.asDictionary()) { error in
+        db.collection("users").document(id).setData(newUser.asDictionary()) { [weak self] error in
             if let error = error {
-                self.errorMessage = "Failed to insert user record: \(error.localizedDescription)"
+                self?.errorMessage = "Failed to insert user record: \(error.localizedDescription)"
             }
         }
     }
@@ -57,13 +57,13 @@ class LoginViewViewModel: ObservableObject {
             return
         }
 
-        Auth.auth().signIn(withEmail: email, password: password) { authResult, error in
+        Auth.auth().signIn(withEmail: email, password: password) { [weak self] authResult, error in
             if let error = error {
-                self.errorMessage = error.localizedDescription
+                self?.errorMessage = error.localizedDescription
                 return
             }
 
-            self.errorMessage = ""
+            self?.errorMessage = ""
         }
     }
 

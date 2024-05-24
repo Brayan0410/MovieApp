@@ -11,11 +11,20 @@ struct ForgotPasswordView: View {
     
     var body: some View {
         VStack {
-            Text("Forgot Password")
-                .font(.title)
+            Spacer() 
+            
+            Image(systemName: "lock.fill")
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .frame(width: 150, height: 150)
                 .foregroundColor(.white)
-                .bold()
-                .padding(.top, 50)
+            
+            
+            Text("Forgot Password")
+                .font(.largeTitle)
+                .fontWeight(.bold)
+                .foregroundColor(.white)
+                .padding(.bottom, 50)
             
             TextField("Email Address", text: $viewModel.forgotPasswordEmail)
                 .padding()
@@ -49,7 +58,7 @@ struct ForgotPasswordView: View {
                     .padding(.top, 20)
             }
             
-            Spacer()
+            Spacer() 
         }
         .padding()
         .background(LinearGradient(gradient: Gradient(colors: [Color.black, Color.blue]),
@@ -60,6 +69,5 @@ struct ForgotPasswordView: View {
 }
 
 #Preview {
-        ForgotPasswordView(viewModel: LoginViewViewModel())
-    }
-
+    ForgotPasswordView(viewModel: LoginViewViewModel())
+}
